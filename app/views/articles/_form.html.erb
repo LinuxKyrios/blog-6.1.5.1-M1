@@ -1,11 +1,8 @@
-<h1>Nowy wpis</h1>
-
-<%= render "form", article: @article %>
-<%= form_with model: @article do |form| %>
+<%= form_with model: article do |form| %>
     <div>
         <%= form.label :title %><br>
         <%= form.text_field :title %>
-        <%= @article.errors.full_messages_for(:title).each do |message| %>
+        <% article.errors.full_messages_for(:title).each do |message| %>
             <div>
                 <%= message %>
             </div>
@@ -14,8 +11,8 @@
 
     <div>
         <%= form.label :body %><br>
-        <%= form.text_area :body %>
-        <% @article.errors.full_messages_for(:body).each do |message| %>
+        <%= form.text_area :body %><br>
+        <% article.errors.full_messages_for(:body).each do |message| %>
             <div>
                 <%= message %>
             </div>
@@ -23,6 +20,6 @@
     </div>
 
     <div>
-        <%= form.submit %>
+        <% form.submit %>
     </div>
 <% end %>
