@@ -4,4 +4,7 @@
 
 <ul>
     <li><%= link_to "Edytuj", edit_article_path(@article) %></li>
+    <li><%= link_to "Usuń wpis", article_path(@article),
+                    method: :delete,
+                    data: { confirm: "Czy aby na pewni?" } %></li>
 </ul>
