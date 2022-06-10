@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+    #basic http authenticate
+    http_basic_authenticate_with name: "kyria", password: "linux", except: [:index, :show]
+
   #function for index page with all articles list
   def index
       @articles = Article.all
